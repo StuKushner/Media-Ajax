@@ -1,0 +1,26 @@
+html {
+	background-color: black;
+}
+
+#buttons .topic {
+	margin: 5px;
+}
+
+body {
+	background-color: grey;
+}
+
+input#add-topic {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+label {
+	color: white;
+}
+
+form#topic-form {
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
