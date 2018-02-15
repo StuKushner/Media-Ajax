@@ -1,8 +1,12 @@
 //VARIABLES
+
+// The topics are the default buttons. Add more!
 var topics = ["The Godfather", "Raging Bull", "Goodfellas", "Arrested Development", "Freaks and Geeks", "Firefly"];
 var apiKey = "Zi1nGYxEU6M2uyg4IYeyUQx5FBYrUlr8"
 
 //FUNCTIONS
+
+// The function that creates the buttons
 function createButtons() {
 	$("#buttons").empty();
 
@@ -15,9 +19,12 @@ function createButtons() {
 	}
 }
 createButtons();
+
 $(document).ready(function(){
 
 //METHODS
+
+// When the person puts in the name of a TV show or movie, a button will appear
 $("#add-topic").click(function(event){
 	event.preventDefault();
 	var topic = $("#topic-input").val().trim();
@@ -26,6 +33,8 @@ $("#add-topic").click(function(event){
 	createButtons();
 });
 
+// Upon clicking a button, the website will go to the Giphy API and pull 10 images
+// from the TV show or movie
 $(document).on("click", "button", function() {
 	var thisButton = $(this).attr("data-name");
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -66,6 +75,7 @@ $(document).on("click", "button", function() {
 
 });
 
+// If the person appears on an animated GIF, it will stop and vice-versa
 $(document).on("click", "img", function(){
 	var state = $(this).attr("data-state");
 	if (state === "animate") {
@@ -79,4 +89,3 @@ $(document).on("click", "img", function(){
 });
 	
 });
-//METHODS
